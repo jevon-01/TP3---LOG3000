@@ -28,6 +28,7 @@ Les dépendances sont listées dans `requirements.txt` :
 
 ```text
 Flask
+pytest
 ``` 
 
 Installez-les avec :
