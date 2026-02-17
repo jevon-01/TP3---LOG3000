@@ -99,8 +99,11 @@ requirements.txt      # Dépendances Python
 
 ## 💡 Remarques et améliorations
 
-- Les fonctions `operators` actuelles implémentent des sémantiques inhabituelles (par exemple, la soustraction est `b - a`, la multiplication est une exponentiation).  
-- La division utilise la division entière (`//`) qui peut ne pas correspondre au comportement attendu pour une calculatrice standard.
+- Les fonctions `operators`:
+- L'addition est `a + b`
+- La soustraction devrait être `a - b`
+- La multiplication devrait être `a * b`
+- La division devrait utiliser la division (`/`)
 - La gestion des entrées n’autorise qu’un seul opérateur et suppose des opérandes numériques décimales.
 
 Les améliorations futures pourraient inclure :
