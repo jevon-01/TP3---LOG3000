@@ -1,8 +1,6 @@
 """
-Application web d’une calculatrice simple.
-Ce fichier définit les routes HTTP et gère l’affichage de l’interface.
-Il reçoit les expressions mathématiques soumises par l’utilisateur
-et délègue le calcul au module operators.py.
+Calculatrice web simple basée sur Flask.
+Gère les routes HTTP, l'affichage de l'interface et délègue les opérations arithmétiques au module operators.py.
 """
 from flask import Flask, request, render_template
 from operators import add, subtract, multiply, divide
@@ -18,17 +16,12 @@ OPS = {
 
 def calculate(expr: str):
     """
-    Calcule le résultat d’une expression mathématique simple composée de deux nombres et d’un seul opérateur.
-    Les opérateurs possibles sont : "+", "-", "*" et "/".
-
-    Exemples d'expressions valides : 
-    - "1 + 1"
-    - "6 / 3"
+    Calcule le résultat d’une expression mathématique simple composée de deux nombres et d’un seul opérateur (+,-,*,/).
 
     Paramètres:
         expr (str): Expression mathématique fournie sous forme de chaîne de caractères.
 
-    Returns:
+    Sortie:
         float: Résultat du calcul.
 
     Raises:
@@ -67,15 +60,13 @@ def calculate(expr: str):
 @app.route('/', methods=['GET', 'POST'])
 def index():
     """
-    Affiche l’interface de la calculatrice et traite la soumission
-    d’une expression mathématique.
+    Route principale de l'application.
 
-    Méthodes HTTP :
-        GET  : affiche la page d’accueil de l'application.
-        POST : récupère l’expression saisie et tente de la calculer.
+    GET  : affiche l'interface de la calculatrice.
+    POST : évalue l'expression soumise et retourne le résultat.
 
-    Returns:
-        La page HTML correspondant à l’interface de la calculatrice.
+    Sortie:
+        Page HTML de la calculatrice avec le résultat.
     """
     result = ""
     if request.method == 'POST':
