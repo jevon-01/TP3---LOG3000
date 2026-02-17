@@ -11,7 +11,11 @@ def test_calculate_addition():
     """Teste une addition simple"""
     result = calculate("5 + 3")
     assert result == 8
-
+    
+def test_calculate_negative_number():
+    """Teste un nombre négatif"""
+    result = calculate("-5 + 3")
+    assert result == -2
 
 def test_calculate_subtraction():
     """Teste une soustraction"""
