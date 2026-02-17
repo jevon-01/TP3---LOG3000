@@ -1,3 +1,9 @@
+import sys
+from pathlib import Path
+
+# Ajoute le répertoire parent au chemin Python
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
 import pytest
 from operators import add, subtract, multiply, divide
 
@@ -10,7 +16,7 @@ class TestAdd:
 
     def test_add_negative_numbers(self):
         """Teste l'addition avec des nombres négatifs"""
-        assert add(-9, -2) == -7
+        assert add(-9, -2) == -11
         assert add(-4, 7) == 3
 
     def test_add_zero(self):
