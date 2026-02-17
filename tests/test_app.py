@@ -1,3 +1,11 @@
+"""
+Tests unitaires pour l'application Flask de la calculatrice.
+
+Ce module teste :
+- la fonction calculate()
+- les différents cas d'erreur
+- les routes HTTP GET et POST
+"""
 import sys
 from pathlib import Path
 

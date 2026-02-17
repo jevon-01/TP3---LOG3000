@@ -1,14 +1,27 @@
+"""
+Tests unitaires du module operators.py.
+
+Ce fichier vérifie le bon fonctionnement des fonctions arithmétiques définies dans operators.py:
+l'addition, la soustraction, la multiplication et la division.
+
+Les tests couvrent :
+- les nombres positifs et négatifs
+- les valeurs nulles
+- les nombres décimaux
+- les cas d’erreur
+
+Ces tests garantissent une fiabilité des opérations utilisées par l’application de calculatrice.
+"""
 import sys
 from pathlib import Path
 
-# Ajoute le répertoire parent au chemin Python
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 import pytest
 from operators import add, subtract, multiply, divide
 
-
 class TestAdd:
+    """Tests unitaires pour l'addition du module operators.py"""
     def test_add_positive_numbers(self):
         """Teste l'addition de deux nombres positifs"""
         assert add(1, 2) == 3
@@ -28,8 +41,9 @@ class TestAdd:
     def test_add_floats(self):
         """Teste l'addition de nombres décimaux"""
         assert add(0.5, 2.5) == 3.0
-
+        
 class TestSubtract:
+    """Tests unitaires pour la soustraction du module operators.py"""
     def test_subtract_positive_numbers(self):
         """Teste la soustraction: subtract(a, b) = b - a"""
         assert subtract(5, 3) == 2
@@ -50,8 +64,8 @@ class TestSubtract:
         """Teste la soustraction de nombres décimaux"""
         assert subtract(3.5, 2.5) == 1.0
 
-
 class TestMultiply:
+    """Tests unitaires pour la multiplication du module operators.py"""
     def test_multiply_positive_numbers(self):
         """Teste la multiplication: multiply(a, b) = a * b"""
         assert multiply(4, 4) == 16
@@ -73,8 +87,8 @@ class TestMultiply:
         """Teste la multiplication avec décimaux"""
         assert multiply(4.0, 2.0) == 8.0
 
-
 class TestDivide:
+    """Tests unitaires pour la division du module operators.py"""
     def test_divide_positive_numbers(self):
         """Teste la division : divide(a, b) = a / b"""
         assert divide(8, 2) == 4

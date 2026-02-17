@@ -1,3 +1,8 @@
+<!--
+   Interface de la calculatrice pour l'application Flask. Le serveur transmet la variable 'result' qui est affichée
+   dans le champ en lecture seule. Chaque bouton ajoute un caractère dans l'affichage et le bouton '=' soumet le 
+   formulaire pour calculer l'expression côté serveur.
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,11 +42,12 @@
 </div>
 
 <script>
+   // Ajoute la valeur associé au bouton à la fin du contenu du champ display
    function appendToDisplay(value) {
       const display = document.getElementById('display');
       display.value += value;
    }
-
+   // Supprime le contenu du champ display en le mettant à une chaine vide
    function clearDisplay() {
       document.getElementById('display').value = '';
    }
