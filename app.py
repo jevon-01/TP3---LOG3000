@@ -20,7 +20,7 @@ def calculate(expr: str):
     op_char = None
 
     for i, ch in enumerate(s):
-        if ch in OPS:
+        if ch in OPS and i > 0:
             if op_pos != -1:
                 raise ValueError("only one operator is allowed")
             op_pos = i
