@@ -46,9 +46,3 @@ pytest tests/test_app.py
 - **Testez les cas limites** : valeurs nulles, négatives, très grandes, etc.
 - **Documentez les cas particuliers** : ajouter des commentaires pour les comportements inhabituels
 
-
-## 📝 Notes
-
-- Les fichiers de test sont actuellement des squelettes vides
-- Complétez-les avec des cas de test réels
-- Assurez-vous de tester tous les chemins d'exécution
